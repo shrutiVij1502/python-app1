@@ -13,12 +13,12 @@ function systemd_unit_file_check() {
   sudo systemctl daemon-reload
 }
 
-function update_deployment_envvar() {
-  PREVIOUS_DEPLOYMENT_ID=$(cat /opt/codedeploy-agent/deployment-root/${DEPLOYMENT_GROUP_ID}/.version)
-  sudo cp /home/snake/_target/configs/sample.env /home/snake/_target/.env
-  sudo sed -i "s/__PREVIOUS_DEPLOYMENT_ID__/${PREVIOUS_DEPLOYMENT_ID}/g" /home/snake/_target/.env
-  sudo sed -i "s/__CURRENT_DEPLOYMENT_ID__/${DEPLOYMENT_ID}/g" /home/snake/_target/.env
-}
+#function update_deployment_envvar() {
+#  PREVIOUS_DEPLOYMENT_ID=$(cat /opt/codedeploy-agent/deployment-root/${DEPLOYMENT_GROUP_ID}/.version)
+#  sudo cp /home/snake/_target/configs/sample.env /home/snake/_target/.env
+#  sudo sed -i "s/__PREVIOUS_DEPLOYMENT_ID__/${PREVIOUS_DEPLOYMENT_ID}/g" /home/snake/_target/.env
+#  sudo sed -i "s/__CURRENT_DEPLOYMENT_ID__/${DEPLOYMENT_ID}/g" /home/snake/_target/.env
+# }
 
 function install_dependencies(){
   sudo python3 -m pip install -r /home/${APP_USER}/app/current/dependencies/requirements.pip
