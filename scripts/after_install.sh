@@ -36,7 +36,7 @@ function log_status(){
 systemd_unit_file_check
 
 # update env vars file
-update_deployment_envvar
+# update_deployment_envvar
 
 # install the dependencies
 install_dependencies
